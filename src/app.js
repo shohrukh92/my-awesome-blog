@@ -1,6 +1,7 @@
 import './app.scss';
 
 import { Router } from './core';
+import { ArticleService } from './services';
 import {
     NavigationComponent,
     ArticleTileComponent,
@@ -23,22 +24,11 @@ const articleTiles = new ArticleTilesComponent({
 });
 document.getElementById("article-panes-container").innerHTML = articleTiles.render();
 
-if (Router.findGetParameter('article') == 1) {
-    const articleComponent = new ArticleComponent({
-        id: 0,
-        title: 'Title 1',
-        author: 'author 1',
-        date: '12/12/12',
-        bannerImg: '',
-        htmlContent: `
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Nullam in tincidunt augue. Fusce vel tincidunt nisi, in interdum diam. 
-            Praesent faucibus lacinia enim, vel condimentum tortor.</p>
 
-            <p>Nulla et purus vitae nibh rhoncus luctus vel nec dui. 
-            Pellentesque at maximus magna. Quisque nec ligula justo.</p>
-        `
-    });
+const articleService = new ArticleService();
+
+if (Router.findGetParameter('article') == 1) {
+    const articleComponent = new ArticleComponent(articleService.getArticleById(1));
     document.getElementById("article-panes-container").innerHTML = "";
     document.getElementById("article-container").innerHTML = articleComponent.render();
     articleComponent.addEventListeners();
