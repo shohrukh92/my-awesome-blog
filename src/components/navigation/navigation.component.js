@@ -14,12 +14,16 @@ export class NavigationComponent extends BaseComponent {
 	render() {
 		let itemsTpl = this.params.items.map(item => {
 			const href = Router.generateHref('page', item);
-			const link = `<a class="nav__link" ${href}>${item}</a>`;
-			return `<li>${link}</li>`;
+			const link = `<a ${href}>${item}</a>`;
+			return `<li class="nav__list-item">${link}</li>`;
 		}).join('');
 
+		const brandHref = Router.generateHref('page', 'home');
 		return `
 			<ul class="nav__list">
+				<li class="nav__list-item nav__list-item--brand">
+					<a class="" ${brandHref}>My Awesome Blog</a>
+				</li>
 				${itemsTpl}
 			</ul>
 		`;

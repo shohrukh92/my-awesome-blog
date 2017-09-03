@@ -1,4 +1,5 @@
-import './app.scss';
+import './styles/reset.scss';
+import './styles/app.scss';
 
 import { Router } from './core';
 import { ArticleService } from './services';
