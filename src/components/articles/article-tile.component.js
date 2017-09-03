@@ -4,12 +4,14 @@ import { BaseComponent, Router } from '../../core';
 export class ArticleTileComponent extends BaseComponent {
     constructor(initialParams) {
 		super();
-		this.params = initialParams || {
+		this.params = {
             id: 0,
             title: '',
             author: '',
             date: ''
-		}
+        }
+        
+        this.setState(initialParams);
 	}
 
 	render() {

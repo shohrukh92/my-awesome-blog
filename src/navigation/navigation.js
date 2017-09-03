@@ -5,9 +5,10 @@ import { Router } from '../core';
 export class Navigation extends BaseComponent {
 	constructor(initialParams) {
 		super();
-		this.params = initialParams || {
+		this.params = {
 			items: []
 		}
+		this.setState(initialParams);
 	}
 
 	render() {

@@ -6,10 +6,11 @@ import { ArticleTileComponent } from './article-tile.component';
 export class ArticleTilesComponent extends BaseComponent {
     constructor(initialParams) {
 		super();
-        this.params = initialParams || {
+        this.params = {
             header: '',
             tiles: []
         };
+        this.setState(initialParams);
         this.articleTileComponent = new ArticleTileComponent();
 	}
 
@@ -32,7 +33,7 @@ export class ArticleTilesComponent extends BaseComponent {
     }
     
     renderArticleTile(tileParams) {
-        this.articleTileComponent.params = tileParams;
+        this.articleTileComponent.setState(tileParams);
         return this.articleTileComponent.render();
     }
 }

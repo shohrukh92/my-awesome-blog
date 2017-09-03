@@ -4,7 +4,7 @@ import { BaseComponent } from '../../core';
 export class ArticleComponent extends BaseComponent {
     constructor(initialParams) {
 		super();
-		this.params = initialParams || {
+		this.params = {
             id: 0,
             title: '',
             author: '',
@@ -12,6 +12,8 @@ export class ArticleComponent extends BaseComponent {
             bannerImg: '',
             htmlContent: ''
         }
+        this.setState(initialParams);
+
         this.tweetTooltipId = "tweet-tooltip"
         this.articleId = "article-" + this.params.id;
     }
