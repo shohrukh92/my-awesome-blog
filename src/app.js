@@ -1,14 +1,10 @@
-import './styles/reset.scss';
 import './styles/app.scss';
+import './styles/reset.scss';
 
-import { Router, BaseComponent } from './core';
+import { ArticleComponent, ArticleTilesComponent, NavigationComponent } from './components';
+import { BaseComponent, Router } from './core';
 import { ArticleService } from './services';
-import {
-    NavigationComponent,
-    ArticleTileComponent,
-    ArticleTilesComponent,
-    ArticleComponent
-} from './components';
+
 const articleService = new ArticleService();
 
 const appComponentSelectors = {

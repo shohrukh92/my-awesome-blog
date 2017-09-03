@@ -1,9 +1,23 @@
 .article-tiles {
     display: flex;
     flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 30px;
 }
 
 .article-tiles__wrapper {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.article-tiles__header {
+    font-size: 18px;
+    font-weight: 600;
+    color: #444444;
+    line-height: 30px;
+    border-bottom: 1px solid #AAA;
 }
