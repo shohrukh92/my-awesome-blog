@@ -1,10 +1,10 @@
-$nav-height: 70px;
+@import "../../styles/variables";
 
 .nav__list {
-	background-color: #FFC038;
+	background-color: $basic-yellow-clr;
 	list-style: none;
 	display: flex;
-	box-shadow: 0 0 10px #777777;
+	box-shadow: 0 0 10px $gray;
 }
 
 .nav__list-item {
@@ -13,10 +13,10 @@ $nav-height: 70px;
 
 	>a {
 		text-decoration: none;
-		font-size: 14px;
-		color: #464646;
 		text-transform: uppercase;
-		font-weight: 600;
+		font-size: $base-font-size;
+		color: $gray-darker;
+		font-weight: $bold-font-weight;
 		line-height: $nav-height;
 	}
 }		

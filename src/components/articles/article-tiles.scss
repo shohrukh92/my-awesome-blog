@@ -1,7 +1,9 @@
+@import "../../styles/variables";
+
 .article-tiles {
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
+    max-width: $content-max-width;
     margin: 0 auto;
     padding: 15px 30px;
 }
@@ -15,9 +17,9 @@
 }
 
 .article-tiles__header {
-    font-size: 18px;
-    font-weight: 600;
-    color: #444444;
+    font-size: $large-font-size;
+    font-weight: $bold-font-weight;
+    color: $gray-dark;
     line-height: 30px;
-    border-bottom: 1px solid #AAA;
+    border-bottom: 1px solid $gray-light;
 }

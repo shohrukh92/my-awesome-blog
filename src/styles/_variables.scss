@@ -1,0 +1,25 @@
+/***Colors***/
+$basic-yellow-clr:          #ffc038;
+$white:                     #fff;
+$black:                     #000;
+$gray-darker:               #333;
+$gray-dark:                 #616161;
+$gray:                      #999;
+$gray-light:                #aaa;
+$gray-lighter:              #ccc;
+
+/***Component sizes***/
+$content-max-width:         1200px;
+$nav-height:                70px;
+
+/***Typography***/
+$base-font-size:            14px;
+$xsmall-font-size:          ceil(($base-font-size * 0.71)); // ~10px
+$small-font-size:           ceil(($base-font-size * 0.85)); // ~12px
+$medium-font-size:          ceil(($base-font-size * 1.14)); // ~16px
+$large-font-size:           ceil(($base-font-size * 1.25)); // ~18px
+
+$light-font-weight:         300;
+$normal-font-weight:        400;
+$bold-font-weight:          600;
+
