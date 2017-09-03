@@ -16,6 +16,7 @@ export class Navigation extends BaseComponent {
 			const link = `<a class="nav__link" ${href}>${item}</a>`;
 			return `<li>${link}</li>`;
 		}).join('');
+
 		return `
 			<ul class="nav__list">
 				${itemsTpl}

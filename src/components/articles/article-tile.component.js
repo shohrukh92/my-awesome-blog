@@ -1,3 +1,4 @@
+import './article-tile.scss';
 import { BaseComponent } from '../../core';
 
 export class ArticleTileComponent extends BaseComponent {
@@ -13,11 +14,11 @@ export class ArticleTileComponent extends BaseComponent {
 	render() {
         const { title, author, date } = this.params;
 		return `
-            <div>
+            <article class="article-tile">
                 <p>${title}</p>
                 <p>${author}</p>
                 <p>${date}</p>
-            </div>
+            </article>
 		`;
 	}
 }
