@@ -1,7 +1,9 @@
-$highlight-color: #352e7e;
+@import "../../styles/variables";
 
 .article {
-    color: green;
+    color: $gray-darker;
+    line-height: 1.5;
+    padding: 30px;
 }
 
 #tweet-tooltip {
@@ -11,10 +13,10 @@ $highlight-color: #352e7e;
 
 ::-moz-selection {
     background-color: $highlight-color;
-    color: white;
+    color: $white;
 }
 
 ::selection {
     background-color: $highlight-color;
-    color: white;
+    color: $white;
 }

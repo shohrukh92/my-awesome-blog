@@ -4,6 +4,12 @@ html {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+#article-tiles-container,
+#article-container {
+	max-width: $content-max-width;
+	margin: 0 auto;
+}
+
 #article-tiles-container {
 	padding-top: $nav-height;
 }
