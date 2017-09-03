@@ -19,11 +19,14 @@ export class ArticleComponent extends BaseComponent {
     }
 
 	render() {
-        const { title, author, date, htmlContent } = this.params;
+        const { title, author, date, bannerImg, htmlContent } = this.params;
         return `
             <div class="article">
                 <h4>${author}</h4>
                 <p>${date}</p>
+                <div>
+                    <img src="../../img/${bannerImg}" />
+                </div>
                 <div id="${this.articleId}">
                     <h2>${title}</h2>
                     ${htmlContent}
