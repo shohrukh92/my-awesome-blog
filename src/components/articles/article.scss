@@ -1,3 +1,20 @@
+$highlight-color: #352e7e;
+
 .article {
     color: green;
+}
+
+#tweet-tooltip {
+	position: absolute;
+	display: none;
+}
+
+::-moz-selection {
+    background-color: $highlight-color;
+    color: white;
+}
+
+::selection {
+    background-color: $highlight-color;
+    color: white;
 }
