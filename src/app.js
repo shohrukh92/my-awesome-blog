@@ -12,7 +12,7 @@ import {
 const navigation = new Navigation({
 	items: ['first', 'second', 'third']
 });
-document.querySelector("#navigation-container").innerHTML = navigation.render();
+document.getElementById("navigation-container").innerHTML = navigation.render();
 
 const articleTiles = new ArticleTilesComponent({
     header: 'Section 1',
@@ -22,7 +22,7 @@ const articleTiles = new ArticleTilesComponent({
         {id: 3, author: 'auth3', title: 'title3'}
     ]
 });
-document.querySelector("#article-panes-container").innerHTML = articleTiles.render();
+document.getElementById("article-panes-container").innerHTML = articleTiles.render();
 
 if (Router.findGetParameter('article') == 1) {
     const articleComponent = new ArticleComponent({
@@ -39,6 +39,30 @@ if (Router.findGetParameter('article') == 1) {
             Pellentesque at maximus magna. Quisque nec ligula justo.</p>
         `
     });
-    document.querySelector("#article-panes-container").innerHTML = "";
-    document.querySelector("#article-container").innerHTML = articleComponent.render();
+    document.getElementById("article-panes-container").innerHTML = "";
+    document.getElementById("article-container").innerHTML = articleComponent.render();
 }
+
+
+function onTextSelection(e) {
+    var selection;
+    
+    if (window.getSelection) {
+        selection = window.getSelection();
+    } else if (document.selection) {
+        selection = document.selection.createRange();
+    }
+    
+    const shareTooltip = document.getElementById('share-tooltip');
+    if (selection.toString()) {
+        shareTooltip.style.top = e.pageY + 'px';
+        shareTooltip.style.left = e.pageX + 'px';
+        shareTooltip.style.display = 'block';
+
+        console.log(selection.toString());
+    } else {
+        shareTooltip.style.display = 'none';
+    }
+};    
+
+document.onmouseup = onTextSelection;
