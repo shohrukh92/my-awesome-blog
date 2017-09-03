@@ -12,7 +12,7 @@ export class Navigation extends BaseComponent {
 
 	render() {
 		let itemsTpl = this.params.items.map(item => {
-			const href = Router.getLink(item);
+			const href = Router.generateHref('page', item);
 			const link = `<a class="nav__link" ${href}>${item}</a>`;
 			return `<li>${link}</li>`;
 		}).join('');

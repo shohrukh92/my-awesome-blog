@@ -1,10 +1,11 @@
 import './article-tile.scss';
-import { BaseComponent } from '../../core';
+import { BaseComponent, Router } from '../../core';
 
 export class ArticleTileComponent extends BaseComponent {
     constructor(initialParams) {
 		super();
 		this.params = initialParams || {
+            id: 0,
             title: '',
             author: '',
             date: ''
@@ -12,10 +13,11 @@ export class ArticleTileComponent extends BaseComponent {
 	}
 
 	render() {
-        const { title, author, date } = this.params;
+        const { id, title, author, date } = this.params;
+        const href = Router.generateHref('article', id);
 		return `
             <article class="article-tile">
-                <p>${title}</p>
+                <a ${href}>${title}</a>
                 <p>${author}</p>
                 <p>${date}</p>
             </article>

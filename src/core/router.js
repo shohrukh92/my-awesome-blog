@@ -12,7 +12,7 @@ export class Router {
         return result;
     }
 
-    static getLink(pageName) {
-        return `href="?page=${pageName}"`;
+    static generateHref(key, value) {
+        return `href="?${key}=${value}"`;
     }
 }
