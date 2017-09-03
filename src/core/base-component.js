@@ -15,4 +15,13 @@ export class BaseComponent {
             }
         }
     }
+
+    addEventListeners() {
+        // addEventListeners method is optional for implementation
+    }
+
+    static renderToDom(element, selector) {
+        document.querySelector(selector).innerHTML = element.render();
+        element.addEventListeners();
+    }
 }

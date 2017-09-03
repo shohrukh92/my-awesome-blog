@@ -1,18 +1,28 @@
 export class Router {
-    static findGetParameter(parameterName) {
-        let result = null,
-            tmp = [];
+    static findUrlParam(parameterName) {
+        let result = null;
         
-        location.search.substr(1).split('&')
-            .forEach((item) => {
-                tmp = item.split('=');
-                if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-            });
+        const urlParams = location.search.substr(1).split('&');
+        urlParams.forEach((item) => {
+            const tmp = item.split('=');
+            if (tmp[0] === parameterName) {
+                result = decodeURIComponent(tmp[1]);
+            }
+        });
 
         return result;
     }
 
     static generateHref(key, value) {
         return `href="?${key}=${value}"`;
+    }
+
+    static getAppNavItems() {
+        return [
+            {title: 'Home', url: 'home'},
+            {title: 'Most Popular', url: 'most-popular'},
+            {title: 'Audio', url: 'audio'},
+            {title: 'Technology', url: 'technology'}            
+        ];
     }
 }

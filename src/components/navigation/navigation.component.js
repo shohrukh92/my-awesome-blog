@@ -12,9 +12,10 @@ export class NavigationComponent extends BaseComponent {
 	}
 
 	render() {
-		let itemsTpl = this.params.items.map(item => {
-			const href = Router.generateHref('page', item);
-			const link = `<a ${href}>${item}</a>`;
+		let itemsTpl = this.params.items.map((item) => {
+			const { title, url } = item;
+			const href = Router.generateHref('page', url);
+			const link = `<a ${href}>${title}</a>`;
 			return `<li class="nav__list-item">${link}</li>`;
 		}).join('');
 
