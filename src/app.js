@@ -26,6 +26,7 @@ document.getElementById("article-panes-container").innerHTML = articleTiles.rend
 
 if (Router.findGetParameter('article') == 1) {
     const articleComponent = new ArticleComponent({
+        id: 0,
         title: 'Title 1',
         author: 'author 1',
         date: '12/12/12',
@@ -41,28 +42,9 @@ if (Router.findGetParameter('article') == 1) {
     });
     document.getElementById("article-panes-container").innerHTML = "";
     document.getElementById("article-container").innerHTML = articleComponent.render();
+    articleComponent.addEventListeners();
 }
 
-
-function onTextSelection(e) {
-    var selection;
-    
-    if (window.getSelection) {
-        selection = window.getSelection();
-    } else if (document.selection) {
-        selection = document.selection.createRange();
-    }
-    
-    const shareTooltip = document.getElementById('share-tooltip');
-    if (selection.toString()) {
-        shareTooltip.style.top = e.pageY + 'px';
-        shareTooltip.style.left = e.pageX + 'px';
-        shareTooltip.style.display = 'block';
-
-        console.log(selection.toString());
-    } else {
-        shareTooltip.style.display = 'none';
-    }
-};    
-
-document.onmouseup = onTextSelection;
+document.onmousedown = () => {
+    document.getElementById('share-tooltip').style.display = 'none';
+};
