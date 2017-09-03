@@ -44,7 +44,3 @@ if (Router.findGetParameter('article') == 1) {
     document.getElementById("article-container").innerHTML = articleComponent.render();
     articleComponent.addEventListeners();
 }
-
-document.onmousedown = () => {
-    document.getElementById('share-tooltip').style.display = 'none';
-};

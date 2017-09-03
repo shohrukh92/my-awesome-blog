@@ -12,28 +12,27 @@ export class ArticleComponent extends BaseComponent {
             bannerImg: '',
             htmlContent: ''
         }
-        this.shareTooltipId = "share-tooltip";
+        this.tweetTooltipId = "tweet-tooltip"
         this.articleId = "article-" + this.params.id;
     }
 
 	render() {
         const { title, author, date, htmlContent } = this.params;
         return `
-            <div>
+            <div class="article">
                 <h4>${author}</h4>
                 <p>${date}</p>
                 <div id="${this.articleId}">
                     <h2>${title}</h2>
                     ${htmlContent}
                 </div>
-                <div id="${this.shareTooltipId}"></div>
+                <div id="${this.tweetTooltipId}"></div>
             </div>
         `;
     }
     
     addEventListeners() {
-        const articleContent = document.getElementById(this.articleId);
-        articleContent.onmouseup = (e) => {
+        document.getElementById(this.articleId).onmouseup = (e) => {
             let selection;
 
             if (window.getSelection) {
@@ -42,23 +41,28 @@ export class ArticleComponent extends BaseComponent {
                 selection = document.selection.createRange();
             }
             
-            const shareTooltip = document.getElementById("share-tooltip");
             const selectionText = selection.toString();
             if (selectionText) {
-                shareTooltip.style.top = e.pageY + 'px';
-                shareTooltip.style.left = e.pageX + 'px';
+                const shareTooltip = document.getElementById(this.tweetTooltipId);
+
+                shareTooltip.style.top = (e.pageY - 25) + 'px';
+                shareTooltip.style.left = (e.pageX + 5) + 'px';
                 shareTooltip.style.display = 'block';
 
                 shareTooltip.innerHTML = '';
-                this.generateTweetBtn(selectionText);
+                this.generateTweetBtn(selectionText, window.location.href);
             }
+        };
+
+        document.onmousedown = () => {
+            document.getElementById(this.tweetTooltipId).style.display = 'none';
         };
     }
 
-    generateTweetBtn(tweetText) {
+    generateTweetBtn(tweetText, articleUrl) {
         twttr.widgets.createShareButton(
-			"http:\/\/my.awesome.blog.xyz",
-			document.getElementById("share-tooltip"),
+			articleUrl,
+			document.getElementById(this.tweetTooltipId),
 			{
 				size: "large",
 				text: tweetText
