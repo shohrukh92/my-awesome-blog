@@ -1,8 +1,8 @@
 import './navigation.scss';
-import { BaseComponent } from '../core';
-import { Router } from '../core';
+import { BaseComponent } from '../../core';
+import { Router } from '../../core';
 
-export class Navigation extends BaseComponent {
+export class NavigationComponent extends BaseComponent {
 	constructor(initialParams) {
 		super();
 		this.params = {

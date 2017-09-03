@@ -1,15 +1,14 @@
 import './app.scss';
 
-import { Navigation } from './navigation';
 import { Router } from './core';
-
-import { 
+import {
+    NavigationComponent,
     ArticleTileComponent,
     ArticleTilesComponent,
     ArticleComponent
 } from './components';
 
-const navigation = new Navigation({
+const navigation = new NavigationComponent({
 	items: ['first', 'second', 'third']
 });
 document.getElementById("navigation-container").innerHTML = navigation.render();
