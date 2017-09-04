@@ -27,6 +27,7 @@ export class ArticleService {
     }
 }
 
+// TODO these articles should be fetched from API
 const articles = [
     {
         id: 1,

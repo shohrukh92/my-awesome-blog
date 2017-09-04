@@ -3,7 +3,8 @@ import './styles/reset.scss';
 
 import { ArticleComponent, ArticleTilesComponent, NavigationComponent } from './components';
 import { BaseComponent, Router } from './core';
-import { ArticleService } from './services';
+import { ArticleService, TwitterService } from './services';
+TwitterService.initTwitterWidget();
 
 const articleService = new ArticleService();
 

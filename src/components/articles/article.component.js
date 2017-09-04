@@ -1,5 +1,6 @@
 import './article.scss';
 import { BaseComponent } from '../../core';
+import { TwitterService } from '../../services';
 
 export class ArticleComponent extends BaseComponent {
     constructor(initialParams) {
@@ -55,23 +56,12 @@ export class ArticleComponent extends BaseComponent {
                 shareTooltip.style.display = 'block';
 
                 shareTooltip.innerHTML = '';
-                this.generateTweetBtn(selectionText, window.location.href);
+                TwitterService.generateTweetBtn(this.tweetTooltipId, selectionText, window.location.href);
             }
         };
 
         document.onmousedown = () => {
             document.getElementById(this.tweetTooltipId).style.display = 'none';
         };
-    }
-
-    generateTweetBtn(tweetText, articleUrl) {
-        twttr.widgets.createShareButton(
-			articleUrl,
-			document.getElementById(this.tweetTooltipId),
-			{
-				size: "large",
-				text: tweetText
-			}
-		);
     }
 }

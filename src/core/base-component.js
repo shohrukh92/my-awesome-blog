@@ -4,6 +4,8 @@ export class BaseComponent {
 	}
 
 	render() {
+        // implementation required
+        // this trick emulates abstract method for es6 classes
 		throw new Error('render method should be implemented!');
 	}
 

@@ -22,8 +22,7 @@ export class ArticleTileComponent extends BaseComponent {
             <article class="article-tile">
                 <img class="article-tile__thumbnail" src="../../img/${thumbnail}">
                 <header class="article-tile__header">
-                    <a ${href}>
-                        ${title}
+                    <a ${href}>${title}
                         <div class="article-tile__more-btn">></div>
                     </a>
                 </header>
