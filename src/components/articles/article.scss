@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .article {
     color: $gray-darker;
@@ -19,7 +20,7 @@
     }
 
     .article__banner {
-        box-shadow: 0 2px 5px #cbcbcb;
+        @include basic-box-shadow;
     }
 }
 
@@ -30,20 +31,10 @@
     margin-top: -50px;
     margin-bottom: 50px;
     background-color: white;
-    box-shadow: 0 2px 5px #cbcbcb;
+    @include basic-box-shadow;
 }
 
 #tweet-tooltip {
 	position: absolute;
 	display: none;
-}
-
-::-moz-selection {
-    background-color: $highlight-color;
-    color: $white;
-}
-
-::selection {
-    background-color: $highlight-color;
-    color: $white;
 }

@@ -4,3 +4,19 @@
          -o-transition: $property $duration $timing-fn;
             transition: $property $duration $timing-fn;
 }
+
+@mixin selection($bckg-clr, $text-clr) {
+    ::-moz-selection {
+        background-color: $bckg-clr;
+        color: $text-clr;
+    }
+
+    ::selection {
+        background-color: $bckg-clr;
+        color: $text-clr;
+    }
+}
+
+@mixin basic-box-shadow($x:0, $y:2px, $z:5px, $clr:#cbcbcb) {
+    box-shadow: $x $y $z $clr;
+}
