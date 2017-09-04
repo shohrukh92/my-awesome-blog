@@ -2,6 +2,7 @@ let instance = null;
 
 export class ArticleService {
     constructor() {
+        // singleton pattern
         if (!instance) {
             instance = this;
         }
@@ -27,7 +28,8 @@ export class ArticleService {
     }
 }
 
-// TODO these articles should be fetched from API
+// TODO these articles should be fetched from the backend API
+// TODO create smaller images for article thumbnails (app optimization)
 const articles = [
     {
         id: 1,

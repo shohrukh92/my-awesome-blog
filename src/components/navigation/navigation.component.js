@@ -12,7 +12,7 @@ export class NavigationComponent extends BaseComponent {
 	}
 
 	render() {
-		let itemsTpl = this.params.items.map((item) => {
+		let navItemsTpl = this.params.items.map((item) => {
 			const { title, url } = item;
 			const href = Router.generateHref('page', url);
 			const link = `<a ${href}>${title}</a>`;
@@ -28,7 +28,7 @@ export class NavigationComponent extends BaseComponent {
 						<img class="nav__list-item--bran-logo" src="../../img/logo.png"/></span>
 					</a>
 				</li>
-				${itemsTpl}
+				${navItemsTpl}
 			</ul>
 		`;
 	}

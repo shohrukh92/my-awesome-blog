@@ -49,19 +49,31 @@ export class ArticleComponent extends BaseComponent {
             
             const selectionText = selection.toString();
             if (selectionText) {
-                const shareTooltip = document.getElementById(this.tweetTooltipId);
-
-                shareTooltip.style.top = (e.pageY - 25) + 'px';
-                shareTooltip.style.left = (e.pageX + 5) + 'px';
-                shareTooltip.style.display = 'block';
-
-                shareTooltip.innerHTML = '';
+                this.showTweetTooltip(e);
                 TwitterService.generateTweetBtn(this.tweetTooltipId, selectionText, window.location.href);
             }
         };
 
         document.onmousedown = () => {
-            document.getElementById(this.tweetTooltipId).style.display = 'none';
+            const tweetTooltipElement = document.getElementById(this.tweetTooltipId);
+            if (tweetTooltipElement) {
+                tweetTooltipElement.style.display = 'none';
+            }
         };
+    }
+
+    showTweetTooltip({pageX, pageY}) {
+        const tweetTooltipElement = document.getElementById(this.tweetTooltipId);
+        if (tweetTooltipElement) {
+            // shift tweet button by 25px upwards and by 5px rightwards
+            const top = (pageY - 25) + 'px', 
+                  left = (pageX + 5) + 'px';
+
+            // clear the old tweetBtn from the tooltip container
+            tweetTooltipElement.innerHTML = '';
+            tweetTooltipElement.style.top = top;
+            tweetTooltipElement.style.left = left;
+            tweetTooltipElement.style.display = 'block';
+        }
     }
 }
