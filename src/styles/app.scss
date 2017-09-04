@@ -7,6 +7,20 @@ html {
 
 body {
 	background-color: $basic-gray-clr;
+	display: flex;
+	flex-flow: column;
+	min-height: 100vh;
+}
+
+.app__main-section {
+	flex: 1;
+}
+
+.app__footer {
+	height: 50px;
+	background-color: $basic-yellow-clr;
+	text-align: center;
+	line-height: 3;
 }
 
 // change text selection color
