@@ -1,7 +1,68 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+$more-btn-size: 50px;
+
 .article-tile {
     width: 400px;
-    height: 300px;
-    box-shadow: 0 0 12px #eee;
     margin: 15px;
-    border: 1px solid #e9e9e9;
+}
+
+.article-tile,
+.article-tile__more-btn {
+    box-shadow: 0 2px 5px #cbcbcb;
+    @include transition(box-shadow, 0.3s);
+
+    &:hover {
+        box-shadow: 0 6px 20px #afafaf;
+    }
+}
+
+.article-tile__thumbnail {
+    width: 100%;
+}
+
+.article-tile__header {
+    position: relative;
+    background-color: #f5f5f5;
+    padding: 25px;
+    min-height: 50px;
+    
+    a {
+        line-height: 1.3;
+        font-size: 20px;
+        color: #222222;
+        text-decoration: none;
+    }
+}
+
+.article-tile__footer {
+    padding: 10px;
+    border-top: 1px solid #DFDFDF;
+}
+
+.article-tile__author,
+.article-tile__date {
+    padding: 5px;
+}
+
+.article-tile__more-btn {
+    width: $more-btn-size;
+    height: $more-btn-size;
+    line-height: $more-btn-size;
+    background-color: $basic-yellow-clr;
+    right: $more-btn-size/2;
+    bottom: -$more-btn-size/2;
+    color: $white;
+    position: absolute;
+    text-align: center;
+    border-radius: 50%;
+    font-family: Tahoma;
+    box-shadow: 0 2px 5px #cbcbcb;
+    @include transition(box-shadow, 0.3s);
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 6px 20px #afafaf;
+    }
 }
