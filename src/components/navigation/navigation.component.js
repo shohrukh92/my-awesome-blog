@@ -23,7 +23,10 @@ export class NavigationComponent extends BaseComponent {
 		return `
 			<ul class="nav__list">
 				<li class="nav__list-item nav__list-item--brand">
-					<a class="" ${brandHref}>My Awesome Blog</a>
+					<a ${brandHref}>
+						<span class="nav__list-item--bran-text">My Awesome Blog</span>
+						<img class="nav__list-item--bran-logo" src="../../img/logo.png"/></span>
+					</a>
 				</li>
 				${itemsTpl}
 			</ul>

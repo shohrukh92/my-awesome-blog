@@ -20,11 +20,8 @@ export class Router {
     static getAppNavItems() {
         return [
             {title: 'Home', url: 'home'},
-            {title: 'Most Popular', url: 'most-popular'},
-            {title: 'Audio', url: 'audio'},
-            {title: 'Technology', url: 'technology'},
-            {title: 'Creativity', url: 'creativity'},
-            {title: 'Culture', url: 'culture'}
+            {title: 'Popular', url: 'popular'},
+            {title: 'Technology', url: 'technology'}
         ];
     }
 }

@@ -29,3 +29,19 @@
 		font-size: 24px;
 	}
 }
+
+.nav__list-item--bran-logo {
+	display: none;
+	width: 45px;
+    padding: 10px 0;
+}
+
+@media screen and (max-width: 650px) {
+	.nav__list-item--bran-text {
+		display: none;
+	}
+
+	.nav__list-item--bran-logo {
+		display: block;
+	}
+}

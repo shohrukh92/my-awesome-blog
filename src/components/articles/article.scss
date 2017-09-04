@@ -8,7 +8,7 @@
 
 .article__info {
     background-color: white;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
     text-align: center;
 
     .article__author {
@@ -19,13 +19,14 @@
         padding-bottom: 10px; 
     }
 
-    .article__banner {
+    .article__banner-img {
         @include basic-box-shadow(small);
+        max-width: 85%;
     }
 }
 
 .article__text {
-    max-width: 1200px;
+    max-width: $content-max-width;
     margin: 0 auto;
     padding: 30px;
     margin-top: -50px;

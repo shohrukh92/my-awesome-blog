@@ -24,8 +24,8 @@ export class ArticleComponent extends BaseComponent {
             <div class="article">
                 <div class="article__info">
                     <h2 class="article__author">${author}</h2>
-                    <p class="article__date">${date}</p>
-                    <img src="../../img/${bannerImg}" class="article__banner"/>
+                    <p class="article__date">Publication date: ${date}</p>
+                    <img src="../../img/${bannerImg}" class="article__banner-img"/>
                 </div>
                 <div id="${this.articleId}" class="article__text">
                     <h2>${title}</h2>
