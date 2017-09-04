@@ -17,6 +17,12 @@
     }
 }
 
-@mixin basic-box-shadow($x:0, $y:2px, $z:5px, $clr:#cbcbcb) {
-    box-shadow: $x $y $z $clr;
+@mixin basic-box-shadow($type:small) {
+    @if $type == small {
+        box-shadow: 0 2px 5px #cbcbcb;
+    } @else if $type == large {
+        box-shadow: 0 6px 20px #afafaf;
+    } @else {
+        box-shadow: 0 0 0 #fff;
+    }
 }

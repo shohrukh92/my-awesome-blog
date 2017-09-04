@@ -37,12 +37,9 @@ $more-btn-size: 50px;
         text-align: center;
         border-radius: 50%;
         font-family: Tahoma;
-        @include basic-box-shadow;
-        @include transition(box-shadow, 0.3s);
 
         &:hover {
             cursor: pointer;
-            box-shadow: 0 6px 20px #afafaf;
         }
     }
 }
@@ -58,10 +55,10 @@ $more-btn-size: 50px;
 
 .article-tile,
 .article-tile__more-btn {
-    @include basic-box-shadow;
+    @include basic-box-shadow(small);
     @include transition(box-shadow, 0.3s);
 
     &:hover {
-        @include basic-box-shadow(0, 6px, 20px,#afafaf);
+        @include basic-box-shadow(large);
     }
 }
