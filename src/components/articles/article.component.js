@@ -22,12 +22,12 @@ export class ArticleComponent extends BaseComponent {
         const { title, author, date, bannerImg, htmlContent } = this.params;
         return `
             <div class="article">
-                <h4>${author}</h4>
-                <p>${date}</p>
-                <div>
-                    <img src="../../img/${bannerImg}" />
+                <div class="article__info">
+                    <h2 class="article__author">${author}</h2>
+                    <p class="article__date">${date}</p>
+                    <img src="../../img/${bannerImg}" class="article__banner"/>
                 </div>
-                <div id="${this.articleId}">
+                <div id="${this.articleId}" class="article__text">
                     <h2>${title}</h2>
                     ${htmlContent}
                 </div>
