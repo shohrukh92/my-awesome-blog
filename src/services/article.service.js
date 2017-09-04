@@ -30,7 +30,7 @@ export class ArticleService {
 const articles = [
     {
         id: 1,
-        title: 'Who are the Сats?',
+        title: 'The domestic cat (Felis silvestris catus or Felis catus) is a small, typically furry, carnivorous mammal',
         author: 'Author 1',
         date: '01/01/2017',
         bannerImg: 'article_1.jpg',
@@ -40,7 +40,7 @@ const articles = [
     },
     {
         id: 2,
-        title: 'Taxonomy and evolution',
+        title: 'Taxonomy and evolution - the domestic cat is believed to have evolved from the Near Eastern wildcat',
         author: 'Author 2',
         date: '02/01/2017',
         bannerImg: 'article_2.jpg',
@@ -50,7 +50,7 @@ const articles = [
     },
     {
         id: 3,
-        title: 'History and mythology',
+        title: 'Learn more about the history of the cat and the myths and legends which have developed about cats',
         author: 'Author 3',
         date: '03/01/2017',
         bannerImg: 'article_3.jpg',
@@ -60,7 +60,7 @@ const articles = [
     },
     {
         id: 4,
-        title: 'Senses',
+        title: 'Cat senses are adaptations that allow cats to be highly efficient predators',
         author: 'Author 4',
         date: '04/01/2017',
         bannerImg: 'article_4.jpg',
@@ -70,7 +70,7 @@ const articles = [
     },
     {
         id: 5,
-        title: 'Hunting and feeding',
+        title: 'Cats hunt small prey, primarily birds and rodents, and are often used as a form of pest control',
         author: 'Author 5',
         date: '05/01/2017',
         bannerImg: 'article_5.jpg',
@@ -80,7 +80,7 @@ const articles = [
     },
     {
         id: 6,
-        title: 'Behavior and Sociability',
+        title: 'Cat behaviour includes body language, elimination habits, aggression, play, communication etc.',
         author: 'Author 6',
         date: '06/01/2017',
         bannerImg: 'article_6.jpg',
